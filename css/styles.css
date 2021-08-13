@@ -131,7 +131,7 @@ img {
   transition: color var(--anim-time) var(--anim-func), box-shadow var(--anim-time) var(--anim-func), background-color var(--anim-time) var(--anim-func);
 }
 
-.icon, .cap-btn {
+.icon, .cap-btn, .footer-btn {
   transition: background-color var(--anim-time) var(--anim-func);
 }
 
@@ -143,6 +143,27 @@ img {
 .link.icon:focus {
   fill: var(--hero-text);
   background-color: var(--accent);
+}
+
+.cap-btn,
+.footer-btn{
+  cursor: pointer;
+  font-size: 16px;
+  background-color: var(--accent);
+  font-weight: bold;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  color: var(--hero-text);
+
+  border: 0px;
+  border-radius: 4px;
+}
+
+.cap-btn:hover,
+.cap-btn:focus,
+.footer-btn:hover,
+.footer-btn:focus {
+  background-color: var(--btn-hover);
 }
 
 /*header*/
@@ -210,11 +231,6 @@ footer {
   background-color: var(--ter-section-bgc);
 }
 
-.footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
 .footer-address {
   color: var(--ft-text);
   font-style: normal;
@@ -222,7 +238,7 @@ footer {
 
 .address {
   margin-top: 20px;
-  margin-right: 15px;
+  width: 231px;
 }
 
 .footer .list-box {
@@ -233,16 +249,21 @@ footer {
 .address .list {
   margin-top: 9px;
 }
+
 .social-container {
   width: 206px;
   height: 80px;
-  margin-left: 70px;
-  margin-top: 12px;
+  margin: 72px 93px 100px 70px;
 }
 
-.social-container .title {
+.social-container .title,
+.subscribe-form .title {
   color: var(--ft-text);
   margin-bottom: 20px;
+}
+
+.logo-container {
+  margin-top: 60px;
 }
 
 .footer .icon {
@@ -252,9 +273,49 @@ footer {
   fill: var(--hero-text);
 }
 
- 
-.footer-align {
+.flex-row {
   display: flex;
+}
+
+.subscribe-form {
+  width: 570px;
+  height: 86px;
+  margin-top: 72px;
+  background-color: var(--ter-section-bgc);
+}
+
+.email {
+  padding: 0;
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: inherit;
+}
+
+.footer-btn {
+  display: block;
+  position: relative;
+  margin-left: 12px;
+  padding: 10px 62px 10px 29px;
+}
+.footer-btn::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    border-radius: 1px;
+    outline: solid 1px red;
+    top: 13px;
+    right: 28px;
+    background-image: url(../images/icons.svg#icon-send);
+}
+
+.logo-container, .social-container, .subscribe-form {
+  outline: solid 1px cyan;
 }
 
 /*Стилі файлу index */
@@ -262,7 +323,7 @@ footer {
 .cap {
   padding: 200px 0;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(.././images/cap-bg-img.jpg);
+    url(../images/cap-bg-img.jpg);
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -282,22 +343,7 @@ footer {
 }
 
 .cap-btn {
-  cursor: pointer;
-  font-size: 16px;
-  background-color: var(--accent);
-  font-weight: bold;
-  line-height: 1.875;
-  letter-spacing: 0.06em;
-  color: var(--hero-text);
-
-  padding: 10px 32px;
-  border: 0px;
-  border-radius: 4px;
-}
-
-.cap-btn:hover,
-.cap-btn:focus {
-  background-color: var(--btn-hover);
+   padding: 10px 32px;
 }
 
 .backdrop.is-hidden {
@@ -435,6 +481,7 @@ footer {
 
 .features .title,
 .social-container .title,
+.subscribe-form .title,
 .label .title {
   text-transform: uppercase;
   line-height: 1.172;
@@ -581,4 +628,20 @@ footer {
 .portfolio-cards .link:focus .overlay {
   opacity: 1;
   transform: translateY(-100%);
+}
+/* .input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+} */
+
+.test {
+  outline: solid 1px yellow;
+}
+.test-svg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pri-text);
+  outline: solid 1px blueviolet;
 }
