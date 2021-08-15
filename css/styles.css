@@ -131,7 +131,7 @@ img {
   transition: color var(--anim-time) var(--anim-func), box-shadow var(--anim-time) var(--anim-func), background-color var(--anim-time) var(--anim-func);
 }
 
-.icon, .cap-btn, .footer-btn {
+.icon, .cap-btn, .footer-btn, .contact-btn .close-btn {
   transition: background-color var(--anim-time) var(--anim-func);
 }
 
@@ -146,6 +146,7 @@ img {
 }
 
 .cap-btn,
+.contact-btn,
 .footer-btn{
   cursor: pointer;
   font-size: 16px;
@@ -299,24 +300,19 @@ footer {
   display: block;
   position: relative;
   margin-left: 12px;
+  margin-top: 36px;
   padding: 10px 62px 10px 29px;
 }
-.footer-btn::after {
-    content: "";
+.subscribe {
     position: absolute;
-    display: inline-block;
-    height: 24px;
-    width: 24px;
     border-radius: 1px;
-    outline: solid 1px red;
     top: 13px;
     right: 28px;
-    background-image: url(../images/icons.svg#icon-send);
 }
 
-.logo-container, .social-container, .subscribe-form {
+/* .logo-container, .social-container, .subscribe-form {
   outline: solid 1px cyan;
-}
+} */
 
 /*Стилі файлу index */
 
@@ -365,8 +361,9 @@ footer {
   z-index: 1;
 }
 
-.modal {
+.contact-form {
   position: absolute;
+  padding: 40px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -377,7 +374,7 @@ footer {
   border-radius: 4px;
 }
 
-.btn-close {
+.close-btn {
   justify-content: center;
   cursor: pointer;
   position: absolute;
@@ -629,19 +626,115 @@ footer {
   opacity: 1;
   transform: translateY(-100%);
 }
-/* .input {
+
+/*Нові стилі*/
+.contact-form .title {
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.contact-form .caption {
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+}
+
+
+.contact-form .input,
+.contact-form .comment {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-} */
-
-.test {
-  outline: solid 1px yellow;
+  margin-top: 4px;
+  position: relative;
+  outline: none;
 }
-.test-svg{
-  display: flex;
-  align-items: center;
+
+.contact-form .input {
+  width: 448px;
+  height: 40px;
+  padding: 0 0 0 42px;
+
+} 
+
+.contact-form .comment {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  resize: none;
+  /* color: rgba(117, 117, 117, 0.5); */
+}
+
+.agreement .text {
+  line-height: 1.714;
+}
+
+.agreement {
+  color: var(--accent)
+}
+
+.contact-btn {
+  padding: 10px 55px 10px 56px;
+}
+
+.form-field .form-icon {
+  left: 12px;
+  bottom: 11px;
+  position: absolute;
+  /* display: block; */
+  outline: solid 1px red;
+}
+
+.form-field {
+  position: relative;
+  outline: solid 1px green;
+  margin-bottom: 10px;
+}
+.form-field-checkbox {
   justify-content: center;
-  background-color: var(--pri-text);
-  outline: solid 1px blueviolet;
+  position: relative;
+  outline: solid 1px green;
+  margin-bottom: 30px;
+}
+
+.check-icon {
+  position: absolute;
+  left: 0px;
+  fill: grey;
+}
+
+.checkbox {
+  width: 16px;
+  height: 15px;
+}
+.checkbox:checked + .check-icon {
+  fill: var(--accent);
+}
+
+.input:hover,
+.comment:hover {
+  cursor: pointer;
+  border-color: var(--accent);
+}
+
+.form-field:focus-within .icon-man {
+  fill: var(--accent);
+}
+.form-field:focus-within .icon-phone {
+  fill: var(--accent);
+}
+.form-field:focus-within .icon-mail {
+  fill: var(--accent);
+}
+.icon-close {
+  fill: #000000;
+}
+
+.close-btn:hover .icon-close,
+.close-btn:focus .icon-close {
+  fill: var(--accent);
 }
