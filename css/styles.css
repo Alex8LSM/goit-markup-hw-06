@@ -23,7 +23,7 @@
   --color-three: #afb1b8; /* SVG базовый цвет 3 */
 
   --anim-func: cubic-bezier(0.4, 0, 0.2, 1);
-  --anim-time: 250ms;
+  --anim-time: 2000ms;
 }
 
 /*ЗАГАЛЬНІ СТИЛІ*/
@@ -65,6 +65,26 @@ img {
 .link {
   text-decoration: none;
   color: inherit;
+}
+
+.overlay, .backdrop, .check-icon {
+  transition: transform var(--anim-time) var(--anim-func), opacity var(--anim-time) var(--anim-func), visibility var(--anim-time) var(--anim-func);
+}
+
+.btn, .link {
+  transition: color var(--anim-time) var(--anim-func), box-shadow var(--anim-time) var(--anim-func), background-color var(--anim-time) var(--anim-func);
+}
+
+.icon, .btn-anim {
+  transition: background-color var(--anim-time) var(--anim-func);
+}
+
+.social-icon, .company-icon, .close-icon, /*.check-icon*/ {
+  transition: fill var(--anim-time) var(--anim-func);
+}
+
+.email, .input, .comment {
+  transition: border-color var(--anim-time) var(--anim-func);
 }
 
 .link.active,
@@ -123,22 +143,6 @@ img {
   border-radius: 50%;
 }
 
-.overlay, .backdrop {
-  transition: transform var(--anim-time) var(--anim-func), opacity var(--anim-time) var(--anim-func), visibility var(--anim-time) var(--anim-func);
-}
-
-.btn, .link {
-  transition: color var(--anim-time) var(--anim-func), box-shadow var(--anim-time) var(--anim-func), background-color var(--anim-time) var(--anim-func);
-}
-
-.icon, .cap-btn, .footer-btn, .contact-btn .close-btn {
-  transition: background-color var(--anim-time) var(--anim-func);
-}
-
-.social-icon, .company-icon {
-  transition: fill var(--anim-time) var(--anim-func);
-}
-
 .link.icon:hover,
 .link.icon:focus {
   fill: var(--hero-text);
@@ -160,11 +164,11 @@ img {
   border-radius: 4px;
 }
 
-.cap-btn:hover,
-.cap-btn:focus,
-.footer-btn:hover,
-.footer-btn:focus {
-  background-color: var(--btn-hover);
+.btn-anim:hover,
+.btn-anim:focus
+{
+  /* background-color: var(--btn-hover); */
+  background-color: red;
 }
 
 /*header*/
@@ -283,36 +287,39 @@ footer {
   height: 86px;
   margin-top: 72px;
   background-color: var(--ter-section-bgc);
+  align-items: flex-end;
 }
 
 .email {
-  padding: 0;
+  padding: 0 0 0 16px;
+  color: #FFFFFF;
+  font-size: 16px;
   width: 358px;
   height: 50px;
+  line-height: 1.25;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  background-color: inherit;
+  background-color: var(--ter-section-bgc);
+}
+
+.email::placeholder {
+  color: rgba(255, 255, 255, 0.6)
 }
 
 .footer-btn {
   display: block;
   position: relative;
   margin-left: 12px;
-  margin-top: 36px;
+  height: 50px;
   padding: 10px 62px 10px 29px;
 }
-.subscribe {
+.subscribe-img {
     position: absolute;
     border-radius: 1px;
     top: 13px;
     right: 28px;
 }
-
-/* .logo-container, .social-container, .subscribe-form {
-  outline: solid 1px cyan;
-} */
 
 /*Стилі файлу index */
 
@@ -349,7 +356,7 @@ footer {
 }
 
 .backdrop {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
@@ -645,7 +652,6 @@ footer {
 .contact-form .input,
 .contact-form .comment {
   border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
   border-radius: 4px;
   margin-top: 4px;
   position: relative;
@@ -687,6 +693,7 @@ footer {
   position: absolute;
   /* display: block; */
   outline: solid 1px red;
+  z-index: 2;
 }
 
 .form-field {
@@ -701,40 +708,65 @@ footer {
   margin-bottom: 30px;
 }
 
-.check-icon {
-  position: absolute;
-  left: 0px;
-  fill: grey;
-}
-
 .checkbox {
+  opacity: 0;
   width: 16px;
   height: 15px;
 }
-.checkbox:checked + .check-icon {
-  fill: var(--accent);
+
+.check-box {
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  position: absolute;
+  left: 0px;
+  pointer-events: none;
+  background-color: red;
+  border: 2px solid black;
+  opacity: 1;
+  /* border-radius: 2px; */
 }
 
-.input:hover,
-.comment:hover {
-  cursor: pointer;
+.check-icon {
+  fill: none;
+}
+
+.checkbox:checked+.check-box {
   border-color: var(--accent);
 }
 
-.form-field:focus-within .icon-man {
+.checkbox:checked+.check-box .check-icon {
   fill: var(--accent);
+  /* visibility: visible; 
+   opacity: 1; */
 }
-.form-field:focus-within .icon-phone {
-  fill: var(--accent);
+
+.input:hover,
+.comment:hover,
+.email:hover,
+.input:focus,
+.comment:focus,
+.email:focus {
+  border-color: var(--accent);
 }
+
+.input:hover,
+.comment:hover,
+.email:hover {
+  cursor: pointer;
+}
+
+.form-field:focus-within .icon-man, 
+.form-field:focus-within .icon-phone,
 .form-field:focus-within .icon-mail {
   fill: var(--accent);
 }
-.icon-close {
+
+.close-icon {
   fill: #000000;
 }
 
-.close-btn:hover .icon-close,
-.close-btn:focus .icon-close {
+.close-btn:hover .close-icon,
+.close-btn:focus .close-icon {
   fill: var(--accent);
 }
