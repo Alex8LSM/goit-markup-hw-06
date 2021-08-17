@@ -23,7 +23,7 @@
   --color-three: #afb1b8; /* SVG базовый цвет 3 */
 
   --anim-func: cubic-bezier(0.4, 0, 0.2, 1);
-  --anim-time: 2000ms;
+  --anim-time: 250ms;
 }
 
 /*ЗАГАЛЬНІ СТИЛІ*/
@@ -79,7 +79,7 @@ img {
   transition: background-color var(--anim-time) var(--anim-func);
 }
 
-.social-icon, .company-icon, .close-icon, /*.check-icon*/ {
+.social-icon, .company-icon, .close-icon, .checked-icon, .unchecked-icon, .form-icon {
   transition: fill var(--anim-time) var(--anim-func);
 }
 
@@ -167,8 +167,8 @@ img {
 .btn-anim:hover,
 .btn-anim:focus
 {
-  /* background-color: var(--btn-hover); */
-  background-color: red;
+  background-color: var(--btn-hover);
+
 }
 
 /*header*/
@@ -265,6 +265,7 @@ footer {
 .subscribe-form .title {
   color: var(--ft-text);
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .logo-container {
@@ -301,6 +302,7 @@ footer {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: var(--ter-section-bgc);
+  margin-top: 20px;
 }
 
 .email::placeholder {
@@ -375,7 +377,6 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 528px;
-  height: 581px;
   background: #FFFFFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -411,6 +412,12 @@ footer {
 .our-team .title,
 .profession {
   text-align: center;
+}
+
+.our-works .label .title {
+  text-transform: uppercase;
+  color: var(--hero-text);
+  
 }
 
 .our-team {
@@ -485,8 +492,7 @@ footer {
 
 .features .title,
 .social-container .title,
-.subscribe-form .title,
-.label .title {
+.subscribe-form .title{
   text-transform: uppercase;
   line-height: 1.172;
   font-size: inherit;
@@ -496,16 +502,12 @@ footer {
   position: relative;
 }
 
-.label {
+.our-works .label {
   width: 100%;
   bottom: 0;
   position: absolute;
   background-color: rgba(47, 48, 58, 0.8);;
   padding: 27px 0px;
-}
-
-.label .title {
-   color: var(--hero-text);
 }
 
 .our-team .title,
@@ -648,6 +650,13 @@ footer {
   letter-spacing: 0.01em;
 }
 
+.comment{
+  font-size: 14px;
+  line-height: 1.143;
+}
+.comment::placeholder{
+  color: rgba(117, 117, 117, 0.5);
+}
 
 .contact-form .input,
 .contact-form .comment {
@@ -672,10 +681,9 @@ footer {
   letter-spacing: 0.01em;
   margin-bottom: 20px;
   resize: none;
-  /* color: rgba(117, 117, 117, 0.5); */
 }
 
-.agreement .text {
+.agreement .check-label {
   line-height: 1.714;
 }
 
@@ -691,20 +699,16 @@ footer {
   left: 12px;
   bottom: 11px;
   position: absolute;
-  /* display: block; */
-  outline: solid 1px red;
   z-index: 2;
 }
 
 .form-field {
   position: relative;
-  outline: solid 1px green;
   margin-bottom: 10px;
 }
 .form-field-checkbox {
   justify-content: center;
   position: relative;
-  outline: solid 1px green;
   margin-bottom: 30px;
 }
 
@@ -714,31 +718,29 @@ footer {
   height: 15px;
 }
 
-.check-box {
-  justify-content: center;
-  width: 16px;
-  height: 15px;
-  position: absolute;
+.checked-icon, .unchecked-icon {
   left: 0px;
+  top: 4px;
+  position: absolute;
   pointer-events: none;
-  background-color: red;
-  border: 2px solid black;
-  opacity: 1;
-  /* border-radius: 2px; */
+
+}
+.checked-icon {
+  fill: white;
 }
 
-.check-icon {
-  fill: none;
+.unchecked-icon {
+  fill: var(--color-one);
+  z-index: 1;
 }
 
-.checkbox:checked+.check-box {
-  border-color: var(--accent);
+.close-icon {
+  fill: #212121;
 }
 
-.checkbox:checked+.check-box .check-icon {
+.checkbox:checked+.check-label .checked-icon,
+.checkbox:checked+.check-label .unchecked-icon {
   fill: var(--accent);
-  /* visibility: visible; 
-   opacity: 1; */
 }
 
 .input:hover,
@@ -750,20 +752,19 @@ footer {
   border-color: var(--accent);
 }
 
+.checkbox:hover+.check-label .unchecked-icon,
+.checkbox:focus+.check-label .unchecked-icon {
+   fill: var(--btn-hover);
+}
+
 .input:hover,
 .comment:hover,
 .email:hover {
   cursor: pointer;
 }
 
-.form-field:focus-within .icon-man, 
-.form-field:focus-within .icon-phone,
-.form-field:focus-within .icon-mail {
+.form-field:focus-within .form-icon {
   fill: var(--accent);
-}
-
-.close-icon {
-  fill: #000000;
 }
 
 .close-btn:hover .close-icon,

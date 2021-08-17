@@ -60,8 +60,7 @@
       </section>
 
       <!-- Модальное окно -->
-      <!-- <div class="backdrop is-hidden" data-modal> -->
-      <div class="backdrop" data-modal>
+      <div class="backdrop is-hidden" data-modal>
         <form class="contact-form flex col">
           <h2 class="title">Оставьте свои данные, мы вам перезвоним</h2>
            <div class="form-field">
@@ -103,14 +102,16 @@
             
             <div class="form-field-checkbox flex">
               <input class="checkbox" type="checkbox" id="agreement" name="agreement"/>
-              <div class="check-box flex">
-                <svg class="check-icon" width="16px" height="15px">
+              <label for="agreement" class="check-label">
+                Соглашаюсь с рассылкой и принимаю <a class="agreement" href="#">Условия договора</a>
+                <svg class="unchecked-icon" width="16px" height="15px">
+                  <use href="./images/icons.svg#icon-unchecked"></use>
+                </svg>
+                <svg class="checked-icon" width="16px" height="15px">
                   <use href="./images/icons.svg#icon-checked"></use>
                 </svg>
-              </div>
-              <label for="agreement" class="text">
-                Соглашаюсь с рассылкой и принимаю <a class="agreement" href="#">Условия договора</a>
               </label>
+              
             </div>
 
           <button data-modal-close class="close-btn flex">
@@ -121,8 +122,6 @@
 
           <button class="contact-btn btn-anim" type="submit">Отправить</button>
         </form>
-
-        </div>
       </div>
 
       <!-- Особенности -->
@@ -515,8 +514,8 @@
           </ul>
         </div>
         <form class="subscribe-form flex-row">
-            <label>
-              <h3 class="title">Подпишитесь на рассылку</h3> 
+            <label> 
+             <span class="title">Подпишитесь на рассылку</span> 
               <input class="email" type="email" name="email" placeholder="E-mail" />
             </label>
             <button class="footer-btn btn-anim" type="submit">Подписаться

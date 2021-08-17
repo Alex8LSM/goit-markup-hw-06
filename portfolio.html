@@ -30,7 +30,7 @@
           </ul>
         </nav>
         <ul class="list-box">
-          <li class="list email">
+          <li class="list">
             <a class="link flex" href="mailto:info@devstudio.com">
               <svg class="email-icon" width="16px" height="12px">
                 <use href="./images/icons.svg#email"></use>
@@ -261,10 +261,10 @@
       </section>
     </main>
 
-    <!-- Футер -->
+<!-- Футер -->
     <footer class="footer">
-      <div class="container footer-align">
-        <div>
+      <div class="container flex-row">
+        <div class="logo-container">
           <div class="brand">
             <a class="link" href="./index.html">
               <span class="brand-color-one">Web</span><span class="brand-color-two">Studio</span>
@@ -317,6 +317,17 @@
             </li>
           </ul>
         </div>
+        <form class="subscribe-form flex-row">
+            <label> 
+             <span class="title">Подпишитесь на рассылку</span> 
+              <input class="email" type="email" name="email" placeholder="E-mail" />
+            </label>
+            <button class="footer-btn btn-anim" type="submit">Подписаться
+                <svg class="subscribe-img" width="24px" height="24px">
+                    <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+            </button>
+        </form>
       </div>
     </footer>
   </body>
