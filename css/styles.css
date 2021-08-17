@@ -358,7 +358,7 @@ footer {
 }
 
 .backdrop {
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -716,6 +716,7 @@ footer {
   opacity: 0;
   width: 16px;
   height: 15px;
+  margin-right: 8px;
 }
 
 .checked-icon, .unchecked-icon {
