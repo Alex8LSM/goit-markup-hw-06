@@ -667,7 +667,7 @@ footer {
   border-radius: 4px;
   margin-top: 4px;
   position: relative;
-  outline: 1px solid green;
+  display: block;
 }
 
 .contact-form .input {
@@ -708,15 +708,6 @@ footer {
   position: relative;
   margin-bottom: 10px;
 }
-/*Тест Початок*/
-.form-field {
-  /* outline: 1px solid red; */
-}
-
-.caption {
-  outline: 1px solid blue;
-}
-/* Тест кінець*/
 
 .form-field-checkbox {
   justify-content: center;
