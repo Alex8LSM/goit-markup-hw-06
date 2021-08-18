@@ -119,10 +119,13 @@ img {
 
 .hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
 }
 
 .flex {
@@ -226,6 +229,9 @@ img {
 }
 
 /*footer*/
+.footer {
+  padding: 60px 0;
+}
 
 .footer .brand-color-two {
   color: var(--ter-brand);
@@ -258,7 +264,7 @@ footer {
 .social-container {
   width: 206px;
   height: 80px;
-  margin: 72px 93px 100px 70px;
+  margin: 15px 93px 0px 70px;
 }
 
 .social-container .title,
@@ -266,10 +272,6 @@ footer {
   color: var(--ft-text);
   margin-bottom: 20px;
   font-weight: 700;
-}
-
-.logo-container {
-  margin-top: 60px;
 }
 
 .footer .icon {
@@ -286,7 +288,7 @@ footer {
 .subscribe-form {
   width: 570px;
   height: 86px;
-  margin-top: 72px;
+  margin-top: 15px;
   background-color: var(--ter-section-bgc);
   align-items: flex-end;
 }
@@ -531,7 +533,140 @@ footer {
   margin-left: -30px;
 }
 
-/*Стилы файлу portfolio*/
+/*Стилі форми бекдропа*/
+.contact-form .title {
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.contact-form .caption {
+  display: block;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+}
+
+.contact-form .comment{
+  width: 448px;
+  height: 120px;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding: 12px 16px;
+  resize: none;
+}
+.comment::placeholder{
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.contact-form .input,
+.contact-form .comment {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  position: relative;
+  display: block;
+}
+
+.contact-form .input {
+  width: 448px;
+  height: 40px;
+  padding: 0 0 0 42px;
+
+} 
+
+.form-field-checkbox .check-label {
+  line-height: 1.714;
+  padding-left: 23px;
+}
+
+.form-field-checkbox .agreement {
+  color: var(--accent)
+}
+
+.contact-btn {
+  padding: 10px 55px 10px 56px;
+}
+
+.form-field .form-icon {
+  left: 12px;
+  bottom: 11px;
+  position: absolute;
+  z-index: 2;
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-field-area {
+  margin-bottom: 20px;
+}
+
+.form-field-checkbox {
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.checked-icon, .unchecked-icon {
+  left: 0px;
+  top: 4px;
+  position: absolute;
+  pointer-events: none;
+
+}
+.checked-icon {
+  fill: white;
+}
+
+.unchecked-icon {
+  fill: var(--color-one);
+  z-index: 1;
+}
+
+.close-icon {
+  fill: #212121;
+}
+
+.checkbox:checked~.checked-icon,
+.checkbox:checked~.unchecked-icon {
+  fill: var(--accent);
+}
+
+.checkbox:hover~ .unchecked-icon,
+.checkbox:focus~ .unchecked-icon {
+   fill: var(--btn-hover);
+}
+
+.input:focus,
+.comment:focus,
+.email:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.input:hover,
+.comment:hover,
+.email:hover {
+  cursor: pointer;
+}
+
+.form-field:focus-within .form-icon {
+  fill: var(--accent);
+}
+
+.close-btn:hover .close-icon,
+.close-btn:focus .close-icon {
+  fill: var(--accent);
+}
+
+/*Стилі файлу portfolio*/
 
 .portfolio .title {
   font-size: 18px;
@@ -634,144 +769,4 @@ footer {
 .portfolio-cards .link:focus .overlay {
   opacity: 1;
   transform: translateY(-100%);
-}
-
-/*Нові стилі*/
-.contact-form .title {
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.contact-form .caption {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1.167;
-  letter-spacing: 0.01em;
-}
-
-.comment{
-  font-size: 14px;
-  line-height: 1.143;
-  margin: 0;
-  padding: 0;
-}
-.comment::placeholder{
-  color: rgba(117, 117, 117, 0.5);
-}
-
-.contact-form .input,
-.contact-form .comment {
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  margin-top: 4px;
-  position: relative;
-  display: block;
-}
-
-.contact-form .input {
-  width: 448px;
-  height: 40px;
-  padding: 0 0 0 42px;
-
-} 
-
-.contact-form .comment {
-  width: 448px;
-  height: 120px;
-  padding: 12px 16px;
-  letter-spacing: 0.01em;
-  resize: none;
-}
-
-.agreement .check-label {
-  line-height: 1.714;
-}
-
-.agreement {
-  color: var(--accent)
-}
-
-.contact-btn {
-  padding: 10px 55px 10px 56px;
-}
-
-.form-field .form-icon {
-  left: 12px;
-  bottom: 11px;
-  position: absolute;
-  z-index: 2;
-}
-
-.form-field {
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.form-field-checkbox {
-  justify-content: center;
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.checkbox {
-  opacity: 0;
-  width: 16px;
-  height: 15px;
-  margin-right: 8px;
-}
-
-.checked-icon, .unchecked-icon {
-  left: 0px;
-  top: 4px;
-  position: absolute;
-  pointer-events: none;
-
-}
-.checked-icon {
-  fill: white;
-}
-
-.unchecked-icon {
-  fill: var(--color-one);
-  z-index: 1;
-}
-
-.close-icon {
-  fill: #212121;
-}
-
-.checkbox:checked+.check-label .checked-icon,
-.checkbox:checked+.check-label .unchecked-icon {
-  fill: var(--accent);
-}
-
-.input:hover,
-.comment:hover,
-.email:hover,
-.input:focus,
-.comment:focus,
-.email:focus {
-  border-color: var(--accent);
-}
-
-.checkbox:hover+.check-label .unchecked-icon,
-.checkbox:focus+.check-label .unchecked-icon {
-   fill: var(--btn-hover);
-}
-
-.input:hover,
-.comment:hover,
-.email:hover {
-  cursor: pointer;
-}
-
-.form-field:focus-within .form-icon {
-  fill: var(--accent);
-}
-
-.close-btn:hover .close-icon,
-.close-btn:focus .close-icon {
-  fill: var(--accent);
 }

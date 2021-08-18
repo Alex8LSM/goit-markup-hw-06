@@ -62,7 +62,7 @@
       <!-- Модальное окно -->
       <div class="backdrop is-hidden" data-modal>
         <form class="contact-form flex col">
-          <h2 class="title">Оставьте свои данные, мы вам перезвоним</h2>
+          <p class="title">Оставьте свои данные, мы вам перезвоним</p>
            <div class="form-field">
              <svg class="form-icon icon-man" width="18px" height="18px">
                <use href="./images/icons.svg#icon-man"></use>
@@ -92,23 +92,23 @@
                 <input class="input mail" type="email" name="email"/>
               </label>
             </div>
-            <div class="form-field">
+            <div class="form-field-area">
               <label class="caption">
                 Комментарий
                 <textarea class="comment" name="comments" rows="5" placeholder="Введите текст"></textarea>
               </label>
             </div>
             <div class="form-field-checkbox flex">
-              <input class="checkbox" type="checkbox" id="agreement" name="agreement"/>
+              <input class="checkbox hidden" type="checkbox" id="agreement" name="agreement"/>
               <label for="agreement" class="check-label">
                   Соглашаюсь с рассылкой и принимаю <a class="agreement" href="#">Условия договора</a>
-                <svg class="unchecked-icon" width="16px" height="15px">
-                  <use href="./images/icons.svg#icon-unchecked"></use>
-                </svg>
-                <svg class="checked-icon" width="16px" height="15px">
-                  <use href="./images/icons.svg#icon-checked"></use>
-                </svg>
               </label>
+              <svg class="unchecked-icon" width="16px" height="15px">
+                <use href="./images/icons.svg#icon-unchecked"></use>
+              </svg>
+              <svg class="checked-icon" width="16px" height="15px">
+                <use href="./images/icons.svg#icon-checked"></use>
+              </svg>
               
             </div>
 
