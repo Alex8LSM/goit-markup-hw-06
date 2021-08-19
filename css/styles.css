@@ -584,7 +584,7 @@ footer {
   padding-left: 23px;
 }
 
-.form-field-checkbox .agreement {
+.form-field-checkbox .agreement-link {
   color: var(--accent)
 }
 
@@ -642,6 +642,10 @@ footer {
 .checkbox:hover~ .unchecked-icon,
 .checkbox:focus~ .unchecked-icon {
    fill: var(--btn-hover);
+}
+
+.check-label:hover {
+  cursor: pointer;
 }
 
 .input:focus,
